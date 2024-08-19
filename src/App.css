@@ -1,38 +1,638 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Radio Canada Big";
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: black;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.loaderPage{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.NavLogo{
+  font-size: 2.8rem;
+  text-decoration: none;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+.navUl{
+  gap: 30px;
+}
+.navUl li{
+  cursor: pointer;
+  font-family: Poppins;
+  font-size: 1.2rem;
+  position: relative;
+  transition: all 0.2s;;
+}
+.navUi li a{
+  color: white;
+}
+.navUl li:after{
+  content: '';
+  position: absolute;
+  background-color: rgb(255, 0, 55);
+  height: 3px;
+  width: 0%;
+  left: 0;
+  bottom: -10px;
+  transition: all 0.4s;
+}
+.navUl li:hover:after{
+  width: 100%;
+}
+.myNameLogo
+{
+  color: #cc7605;
+}
+.mainHome{
+  height: 100vh;
+  max-width: 100%;
+  background: url('./componants/bg.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.intro label, .intro label h5{
+  color: white;
+  font-family: poppins;
+  font-weight: bold;
+  cursor: default;
+}
+.intro h1{
+  font-size: 6rem;background-image: 
+  linear-gradient(to right, #ece251, #cc7605);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.sidePic{
+  height: 25rem;
+  width: 20rem;
+  background:url('./componants/mypic.JPG');
+  background-size: cover;
+  border-radius: 20%;
+}
+.labelAnimation{
+  display: inline;
+}
+.labelAnimation h5{
+  letter-spacing: 1px;
+  border-right: 3px solid white;
+  width: 61%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+          typing 2s steps(22),
+          cursor .4s step-end infinite alternate;
+} 
+
+@keyframes cursor{
+  50% {border-color: transparent;}
+}
+@keyframes typing{
+  from {width: 0;}
+}
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+.mainStats{
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    'menu menu header header header header'
+    'menu menu main main right right'
+    'menu menu footer footer footer footer';
+  gap:15px;
+  padding: 20px;
+}
+.item1,.item2,.item3,.item4,.item5{
+  background-color: #002d36;
+  overflow: hidden; /* or scroll, auto */
+  text-overflow: ellipsis;
+  border-radius: 5px;
+  min-height: 100px;
+  padding:20px;
+}
+.item1{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.item1 label{
+  color: rgb(220,171,42);
+  font-family: poppins;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.item1 p{
+  text-align:justify;
+}
+.item2{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* justify-content: space-evenly; */
+}
+.item2 h2{
+  font-size: 1.5rem;
+  color: rgb(220,171,42);
+  font-family: Poppins;
+  font-weight: bold;
+  text-align: center;
+}
+.mypic2{
+  height: 12rem;
+  width: 12rem;
+  background-image: url('./componants/mypic2.JPG');
+  background-size: cover;
+  border-radius: 50%;
+  transition: all 0.15s;
+}
+.languageSection{
+  display: flex;
+  gap: 10px;
+}
+.languageSection .languageCircle{
+  height: 5rem;
+  width: 5rem;
   color: white;
+  border-radius: 50%;
+  border: 8px solid rgb(220,171,42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: poppins;
 }
-
-.App-link {
-  color: #61dafb;
+.item2 .prg{
+  height: 20px;
 }
+.item2 .codingSkills{
+  width: 80%;
+  margin-top: 1rem;
+}
+.codingSkills h5{
+  color: rgb(220,171,42);
+  font-family: poppins;
+  font-size: 0.7rem;
+}
+.item2 .progress{
+  height: 5px;
+  width: 100%;
+}
+.item2 .progress-bar{
+  width: 90%;
+}
+.progress .backendProgress{
+  width: 80%;
+}
+.progress .wordpressProgress{
+  width: 95%;
+}
+.item2 h6{
+  font-weight: bold;
+}
+.item3{
+  max-height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.experience,.clients{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.experience h3,.clients h3{
+  color: rgb(220,171,42);
+  font-size: 3.5rem;
+  font-family: "Radio Canada Big";
+}
+.experience p,.clients p{
+  color: white;
+  font-family: poppins;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.item5{
+  color: white;
+  position: relative;
+}
+.item5 i{
+  font-size: 5rem;
+}
+.item4{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.item4 h3{
+  color: rgb(220,171,42);
+  font-family: "Radio Canada Big";
+  font-weight: bold;
+  font-size: "Radio Canada Big";
+}
+.socialIcons{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.item4 i{
+  font-size: 3.5rem;
+}
+.item5 h3{
+  text-align: center;
+  color: rgb(220,171,42);
+}
+.item5 div{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.item{
+  transition: all 0.25s;
+}
+.item:hover{
+  box-shadow: 0px 0px 15px  rgb(220,171,42);
+}
+.mypic2:hover{
+  box-shadow: 0px 0px 20px rgb(220,171,42);
+}
+a:hover{
+  cursor: pointer;
+  
+}
+/* Skills css */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.contactMain{
+  height: 100vh;
+  width: 100%;
+  background-image: url('./componants/contactBg.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formMain{
+  height: 80%;
+  width: 30%;
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+}
+.formMain h3{
+  text-align: center;
+  font-family: "Radio Canada Big";
+  background-image:linear-gradient(to right, #ece251, #cc7605);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.formMain form{
+  height: 85%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+.formMain form input{
+  width: 80%;
+  margin-top: 2rem;
+  background-color: transparent;
+  border-style:solid ;
+  border-width: 0px 0px 2px 0px;
+  outline: none;
+  color: white;
+  font-family: poppins;
+  padding: 0px 5px;
+}
+.formMain form input:active{
+  border-width: 0px 0px 2px 0px;
+}
+.formMain form textarea{
+  height: 40%;
+  margin-top: 2rem;
+  width: 80%;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.267);
+  outline: none;
+  font-family: poppins;
+  color: white;
+  padding: 0px 5px;
+}
+.formMain form button{
+  margin-top: 2rem;
+  width: 30%;
+}
+.skillsMain{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.videoBg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the video covers the entire area */
+  z-index: -1;
+}
+.mainSec{
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+.mainSec .mainDivs{
+  height: 65%;
+  width:20rem;
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  transition: all 0.15s;
+  /* overflow: hidden; */
+  /* justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column; */
+}
+.mainSec div .skillsTitle{
+  background-image:linear-gradient(to right, #ece251, #cc7605);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-family: Poppins;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 1rem;
+}
+.frontendDetail,.backendDetail,.wordpressDetail{
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0px;
+}
+.frontendDetail h6,.backendDetail h6, .wordpressDetail h6{
+  color: rgb(220,171,42);
+  font-style: Poppins;
+}
+.frontendDetail p,.backendDetail p,.wordpressDetail p{
+  color: white;
+  font-family: poppins;
+  padding-left: 10px;
+}
+#progressBar{
+  height: 5px;
+  width: 90%;
+}
+#progress{
+    height: 5px;
+    width: 100%;
+}
+.skillsIcons{
+  background-color: aliceblue;
+}
+.logoSec{
+  height: 8rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 1rem;
+}
+.logoSec i{
+  color: white;
+  font-size: 2.5rem;
+}
+#backendprogressbar{
+  width: 80%;
+}
+#wordpressprogressBar{
+  width: 85%;
+}
+.mainDivs:hover{
+  border: 1px solid rgb(220,171,42);
+}
+.projectMain{
+  position: relative;
+  height: 220vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projectMain video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+.projectsSec{
+  height: 160vh;
+  width: 70%;
+  position: absolute;
+  z-index: +1;
+  margin-top: -10rem;
+  /* overflow: hidden; */
+}
+.projectsSec h3{
+  text-align: center;
+  font-family: poppins;
+  background-image: linear-gradient(to right, #ece251, #cc7605);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+.projectsSec .project{
+  width: 100%;  height: 40vh;
+  display: flex;
+  margin-top: 2rem;
+}
+.project .img{
+  width: 60%;
+  height: 100%; 
+  position: relative;
+}
+.project .img video{
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+  border-radius: 5px;
+}
+.detail{
+  width: 40%;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.project .detail h5{
+  color: #ece251;
+  text-align: center;
+  font-family: poppins;
+  text-align: center;
+}
+.project .detail p{
+  color: white;
+  font-family: poppins;
+  text-align: center;
+}
+.detail p span{
+  color: #cc7605;
+}
+.project .img1{
+  height: 40vh;
+  width: 60%;
+}
+.project .img1 img{
+  width: 95%;
+  object-fit: cover;
+}
+.project .detail1{
+  width: 40%;
+}
+@media screen and (max-width:990px) {
+  .navUl{
+    gap: 0px;
   }
-  to {
-    transform: rotate(360deg);
+  .navUl li:hover:after{
+    width: 20%;
+  }
+  .mainHome{
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .sidePic{
+    order: -1;
+    height: 18rem;
+    width: 13rem;
+  }
+  .intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro h1{
+    font-size: 3rem;
+  }
+  .intro h5{
+    width: 100%;
+    font-size: 1rem;
+  }
+  .mainStats{
+    display: block;
+  }
+  .item2,.item1,.item3,.item4,.item5{
+    margin-top: 15px;
+  }
+  .item3 .experience,.clients{
+    justify-content: center;
+    align-items: center;
+  }
+  .socialIcons{
+    width: 100%;
+  }
+  .socialIcons i{
+    font-size: 3rem;
+  }
+  .item5 i{
+    font-size: 2rem;
+  }
+  .formMain{
+    height: 60%;
+    width: 80%;
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+  }
+  .skillsMain{
+    height: 180vh;
+  }
+  .mainSec{
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .mainSec .mainDivs{
+    margin-bottom: 20px;
+    height: 50vh;
+    width:20rem;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    transition: all 0.15s;
+    /* overflow: hidden; */
+    /* justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column; */
+  }
+  .projectsSec .project{
+    display: flex;
+    flex-direction: column;
+    height: 55vh;
+    gap: 20px;
+  }
+  .projectsSec{
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .project .img{
+    width: 100%;
+    display: flex;
+    height: 25vh;
+    justify-content: center;  }
+  .project .img video{
+    width: 100%;
+    height:24vh;
+  }
+  .detail{
+    width: 100%;
+  }
+  .img2{
+    order: -1;
+  }
+  .project .img1{
+    height: 40vh;
+    width: 100%;
+  }
+  .project .img1 img{
+    width: 100%;
   }
 }
