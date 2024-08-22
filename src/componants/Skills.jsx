@@ -1,12 +1,12 @@
 import React from 'react'
-import vid from './video/skillsbg.mp4'
+// import vid from './video/skillsbg.mp4'
 export default function Skills() {
   return (
     <>
       <main className='skillsMain'>
-        <video className='videoBg' autoPlay loop muted>
+        {/* <video className='videoBg' autoPlay loop muted>
           <source src={vid} type="video/mp4"/>
-        </video>
+        </video> */}
         <div className="mainSec container">
           <div className='mainDivs'>
             <h2 className='skillsTitle'>Front End</h2>

@@ -1,5 +1,4 @@
 import React from 'react'
-import video from './video/skillsbg.mp4'
 import prj3 from './video/project3.webm'
 import prj2 from './video/project2.webm'
 import carRental from './prj2.png';
@@ -51,9 +50,6 @@ export default function Projects() {
   return (
     <>
       <main className="projectMain">
-        <video autoPlay loop muted>
-          <source src={video} type='video/mp4'/>
-        </video>
         <div className="projectsSec">
           <h3>Some Recent Projects</h3>
           <div className="project">
